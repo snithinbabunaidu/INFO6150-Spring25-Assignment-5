@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #f8f9fa;
+}
+
+#content {
+    width: 100%;
+    min-height: 100vh;
+
+    .navbar {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 1rem;
+
+        .nav-link {
+            color: #dc3545 !important;
+        }
+    }
+}
+
+// Mission cards styling
+.card.mission-card {
+    border: none !important;
+    margin-bottom: 1rem;
+    
+    .card-header {
+        background: transparent !important;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .card-body {
+        background: transparent !important;
+    }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Control Dashboard</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Main Content -->
+    <div id="content">
+        <nav class="navbar navbar-expand">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <i class="fas fa-plane-departure me-2"></i>
+                    Mission Control
+                </a>
+                <div class="d-flex align-items-center">
+                    <ul class="navbar-nav me-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Missions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Crew</a>
+                        </li>
+                    </ul>
+                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#newMissionModal">
+                        <i class="fas fa-plus me-2"></i>New Mission
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div id="missionContainer" class="row">
+                <!-- Mission cards will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- New Mission Modal -->
+    <div class="modal fade" id="newMissionModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">New Mission</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="newMissionForm">
+                        <div class="mb-3">
+                            <label class="form-label">Aircraft Category</label>
+                            <select class="form-select" id="aircraftCategory" required>
+                                <option value="">Select Category</option>
+                                <option value="manned">Manned</option>
+                                <option value="unmanned">Unmanned</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Aircraft Model</label>
+                            <select class="form-select" id="aircraftModel" required disabled>
+                                <option value="">Select Aircraft Model</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Mission Type</label>
+                            <select class="form-select" id="missionType" required>
+                                <option value="">Select Mission Type</option>
+                                <option value="payload">Payload Delivery</option>
+                                <option value="emergency">Emergency Relief</option>
+                                <option value="target">Target Elimination</option>
+                                <option value="rtl">Return to Launch</option>
+                                <option value="forage">Forage</option>
+                            </select>
+                        </div>
+
+                        <!-- Dynamic Fields Container -->
+                        <div id="dynamicFields"></div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Number of Vehicles</label>
+                            <input type="number" class="form-control" id="vehicleCount" required min="1">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Mission Description</label>
+                            <textarea class="form-control" id="missionDescription" rows="3" required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="createMission">Create Mission</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add this for toasts container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <!-- Toasts will be inserted here -->
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html> 
